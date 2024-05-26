@@ -1,0 +1,28 @@
+{
+  "name": "cs369_class_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "sp": "supervisor index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tlezz/CS369_Class_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tlezz/CS369_Class_Project/issues"
+  },
+  "homepage": "https://github.com/Tlezz/CS369_Class_Project#readme",
+  "dependencies": {
+    "express": "^5.0.0-beta.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "nodemon": "^3.1.1"
+  }
+}
