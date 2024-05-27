@@ -55,30 +55,34 @@ app.get('/api/login', (req, res) => {
   });
 });
 
+// add product
+app.post("/api/addProduct", (req, res) => {
+  const productName = req.body.sending.productName;
+  const imageLink = req.body.sending.imageLink;
+  const price = req.body.sending.price;
+  const description = req.body.sending.description;
+  const size = req.body.sending.size;
+  const material = req.body.sending.material;
+  db.query(
+    `
+    INSERT INTO product (productID, productName, imageLink, price, description, size, material)
+    VALUES (NULL, ?, ?, ?, ?, ?, ?);
+    `,
+    [productName, imageLink, price, description, size, material],
+    (err, result) => {
+      if (err) {
+        console.log(
+          err + "send add product error" + productName + imageLink + price + description + size + material
+        );
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 const PORT = 3306;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
-app.get('/api/products/:id', (req, res) => {
-  const { id } = req.params;
-  db.query('SELECT * FROM products WHERE id = ?', [id], (err, result) => {
-    if (err) {
-      return res.status(500).json({ message: 'Error fetching product details' });
-    }
-    res.json(result[0]);
-  });
-});
-
-app.post('/api/products', (req, res) => {
-  const { name, description, size, material, price, image } = req.body;
-  const query = 'INSERT INTO products (name, description, size, material, price, image) VALUES (?, ?, ?, ?, ?, ?)';
-  db.query(query, [name, description, size, material, price, image], (err, result) => {
-    if (err) {
-      return res.status(500).json({ message: 'Error adding product' });
-    }
-    res.status(201).json({ id: result.insertId, ...req.body });
-  });
-});
 
 
 
