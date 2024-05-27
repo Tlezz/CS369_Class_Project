@@ -31,6 +31,20 @@ app.get('/api/products', (req, res) => {
   });
 });
 
+// Route to get a single product by ID
+app.get('/api/products/:id', (req, res) => {
+  const productId = req.params.id;
+  db.query('SELECT * FROM product WHERE productID = ?', [productId], (err, result) => {
+    if (err) {
+      return res.status(500).json({ message: 'Error fetching product' });
+    }
+    if (result.length === 0) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+    res.json(result[0]);
+  });
+});
+
 // Login
 app.get('/api/login', (req, res) => {
   db.query('SELECT * FROM account', (err, results) => {
@@ -40,6 +54,10 @@ app.get('/api/login', (req, res) => {
     res.json(results);
   });
 });
+
+const PORT = 3306;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
 app.get('/api/products/:id', (req, res) => {
   const { id } = req.params;
@@ -62,9 +80,6 @@ app.post('/api/products', (req, res) => {
   });
 });
 
-
-const PORT = 3306;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
 
