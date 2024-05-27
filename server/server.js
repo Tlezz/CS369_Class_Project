@@ -2,17 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mysql = require('mysql2');
-require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
+  host: "sql12.freesqldatabase.com",
+  user: "sql12709675",
+  password: "B58auKQ7He",
+  database: "sql12709675"
 });
 
 db.connect(err => {
@@ -24,9 +23,19 @@ db.connect(err => {
 });
 
 app.get('/api/products', (req, res) => {
-  db.query('SELECT * FROM products', (err, results) => {
+  db.query('SELECT * FROM product', (err, results) => {
     if (err) {
       return res.status(500).json({ message: 'Error fetching products' });
+    }
+    res.json(results);
+  });
+});
+
+// Login
+app.get('/api/login', (req, res) => {
+  db.query('SELECT * FROM account', (err, results) => {
+    if (err) {
+      return res.status(500).json({ message: 'Error fetching account' });
     }
     res.json(results);
   });
@@ -53,19 +62,9 @@ app.post('/api/products', (req, res) => {
   });
 });
 
-app.post('/api/login', (req, res) => {
-  const { username, password } = req.body;
-  if (username === 'admin' && password === 'password') {
-    res.json({ success: true });
-  } else {
-    res.json({ success: false });
-  }
-});
 
-console.log(process.env.DB_HOST);
-console.log(process.env.DB_USER);
-console.log(process.env.DB_PASSWORD);
-console.log(process.env.DB_NAME);
-
-const PORT = process.env.PORT || 5000;
+const PORT = 3306;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
+
