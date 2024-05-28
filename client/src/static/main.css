@@ -205,6 +205,7 @@
 
     input[type="text"],
     input[type="password"],
+    input[type="number"],
     input[type="email"] {
         -moz-appearance: none;
         -webkit-appearance: none;
@@ -221,7 +222,7 @@
         outline: none;
         resize: none;
     }
-
+    
     textarea {
         width: 35%;
         height: 35px;
@@ -231,6 +232,8 @@
     }
 
     input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="password"]:focus,
     input[type="email"]:focus {
         border-color: rgb(0, 115, 255);
     }
