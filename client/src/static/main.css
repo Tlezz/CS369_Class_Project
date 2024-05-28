@@ -222,6 +222,14 @@
         resize: none;
     }
 
+    textarea {
+        width: 35%;
+        height: 35px;
+        border: 1px solid #888888;
+        border-radius: 4px;
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0 ,0.2);
+    }
+
     input[type="text"]:focus,
     input[type="email"]:focus {
         border-color: rgb(0, 115, 255);
