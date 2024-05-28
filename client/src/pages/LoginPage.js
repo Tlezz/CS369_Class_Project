@@ -48,7 +48,8 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <section class="content-section content-section-single">
+      <div class="content-container">
       {localStorage.getItem("yourName") === "" ? (
         <div>
           <h2>Login</h2>
@@ -60,7 +61,7 @@ const Login = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div>
+          <div style={{ marginTop: '16px' }}>
             <label>Password:</label>
             <input
               type="password"
@@ -68,13 +69,13 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button onClick={handleSubmit}>Sign In</button>
+          <button style={{ marginTop: '24px' }} className="button button-primary" onClick={handleSubmit}>Sign In</button>
         </div>
       ) : (
-        <><button onClick={signOut}>Sign Out</button></>
+        <><button className="button button-secondary" onClick={signOut}>Sign Out</button></>
       )}
-      
-    </div>
+      </div>
+    </section>
   );
 };
 

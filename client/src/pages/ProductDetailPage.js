@@ -6,7 +6,7 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
 
-  useEffect(() => {
+  useEffect(() => { 
     const getProduct = () => {
       axios.get(`http://localhost:3306/api/products/${id}`).then((response) => {
         setProduct(response.data);
@@ -17,7 +17,8 @@ const ProductDetail = () => {
   }, [id]);
 
   return (
-    <div>
+    <section class="content-section content-section-single">
+      <div class="content-container">
       {product ? (
         <div>
           <h1>{product.productName}</h1>
@@ -25,12 +26,13 @@ const ProductDetail = () => {
           <p>{product.description}</p>
           <p>Size: {product.size}</p>
           <p>Material: {product.material}</p>
-          <p>${product.price}</p>
+          <p>{product.price} Zenny</p>
         </div>
       ) : (
         <p>Loading...</p>
       )}
     </div>
+    </section>
   );
 };
 

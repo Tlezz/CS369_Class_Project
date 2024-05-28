@@ -1,0 +1,305 @@
+    /* mitr-300 - latin_thai */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Mitr';
+        font-style: normal;
+        font-weight: 300;
+        src: url('fonts/mitr-v11-latin_thai-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+    /* mitr-regular - latin_thai */
+    @font-face {
+        font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+        font-family: 'Mitr';
+        font-style: normal;
+        font-weight: 400;
+        src: url('fonts/mitr-v11-latin_thai-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* Global */
+    *, ::before, ::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        color: #333333;
+        font-family: 'Mitr', sans-serif;
+        font-weight: 300;
+    }
+
+    p {
+        color: #333333;
+        font-family: 'Mitr', sans-serif;
+    }
+
+    label {
+        font-family: 'Mitr', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Mitr', sans-serif;
+        color: #333333; 
+        font-weight: 400;
+        line-height: 1.4;   
+        margin-top: 0px;
+        margin-bottom: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    h6 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-top: 0px;
+        margin-bottom: 16px;
+    }
+
+    a {
+        color:rgb(4, 100, 216)
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-grey {
+        color: #888888;
+    }
+
+    .image-block {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .content-section {
+        padding: 64px 16px;
+    }
+
+    .content-section-single {
+        min-height: calc(100vh - 110px);
+    }
+
+    .content-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .content-container-narrow {
+        max-width: 600px;
+    }
+
+    .content-title {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 16px;
+        row-gap: 16px;
+        margin-bottom: 16px;
+    }   
+
+    .grid-item img {
+        width:60%;
+        height: 60%;
+        object-fit: cover; /* This ensures the image covers the entire area of its container */
+    }
+
+    @media screen and (min-width: 720px) {
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    /* Site Header*/
+
+    .site-header {
+        font-family: 'Mitr', sans-serif;
+        background-color: white;
+        border-bottom: 1px solid rgb(215, 215, 215);
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0 ,0.1);
+        display: flex;
+        justify-content: flex-start;
+        height: 50px;
+    }
+
+    .left-links, .right-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .site-header-item {
+        color: #111111;
+        background-color: rgba(0, 0, 0 ,0);
+        font-weight: 400;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 0px 10px;
+        transition: background-color 300ms;
+    }
+
+    .site-header-item:hover {
+        background-color: rgba(0, 0, 0 ,0.1);
+        
+    }
+
+    .site-header-brand img {
+        display: inline-block;
+        height: 32px;
+        margin-right: 8px;
+    }
+
+    /* SIte Footer */ 
+
+    .site-footer {
+        background-color: rgb(219, 219, 219);
+        text-align: center;
+        padding: 16px;
+    }
+
+    .site-footer-copyright {
+        font-size: 12px;
+    }
+
+    /* Form */
+
+    .form-field {
+        margin-bottom: 16px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 4px;
+        line-height: 1.6;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #ffffff;
+        border: 1px solid #888888;
+        border-radius: 4px;
+        font-size: 16px;
+        display: block;
+        width: 35%;
+        height: 35px;
+        padding: 4px 12px;
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0 ,0.2);
+        outline: none;
+        resize: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+        border-color: rgb(0, 115, 255);
+    }
+
+    .button {
+        font-family: 'Mitr', sans-serif;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        color: white;
+        background-color: #333333;
+        border: none;
+        border-radius: 8px;
+        font-weight: 400;
+        line-height: 1;
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 16px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 300ms;
+    }
+
+    .button-primary {
+        background-color:rgb(4, 100, 216);
+        transition: background-color 300ms;
+    }
+
+    .button:hover {
+        background-color: #555555; 
+    }
+
+    .button-primary:hover {
+        background-color:rgb(0, 115, 255)
+    }
+
+    .button-secondary {
+        background-color:rgb(178,59,59);
+        transition: background-color 300ms;
+    }
+
+    .button-secondary:hover {
+        background-color:rgb(196, 90, 90)
+    }
+
+    .button-green {
+        background-color:rgb(54, 150, 35);
+        transition: background-color 300ms;
+    }
+
+    .button-green:hover {
+        background-color:rgb(98, 189, 79)
+    }
+
+    /* Home Landing Section*/
+
+    /* .home-landing-section {
+        background-color: #e9e9e9;
+        background-image: url('bg.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        padding: 120px 16px;
+    } */
+
+    .home_landing-text {
+        text-shadow: 1px 1px 2px rgba(112, 112, 112, 0.5);
+        margin-top: 0px;
+        margin-bottom: 24px;
+    }
+
+    /* Food */
+
+    .food-title a:not(:hover) {
+        color: #111111;
+        text-decoration: none;
+    }
+
+

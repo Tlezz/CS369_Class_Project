@@ -64,68 +64,73 @@ const AddProduct = () => {
   
 
   return (
-    <div>
+    <section class="content-section content-section-single">
+      <div class="content-container">
+      <h2>Add New Product</h2>
       <div>
-        <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={productName}
-          onChange={handleProductName}
-          required
-        />
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={productName}
+            onChange={handleProductName}
+            required
+          />
+        </div>
+        <div style={{ marginTop: '16px' }}>
+          <label>Description:</label>
+          <textarea
+            name="description"
+            value={description}
+            onChange={handleDescription}
+            required
+          />
+        </div>
+        <div style={{ marginTop: '16px' }}>
+          <label>Size:</label>
+          <input
+            type="text"
+            name="size"
+            value={size}
+            onChange={handleSize}
+            required
+          />
+        </div>
+        <div style={{ marginTop: '16px' }}>
+          <label>Material:</label>
+          <input
+            type="text"
+            name="material"
+            value={material}
+            onChange={handleMaterial}
+            required
+          />
+        </div>
+        <div style={{ marginTop: '16px' }}>
+          <label>Price:</label>
+          <input
+            type="number"
+            name="price"
+            value={price}
+            onChange={handlePrice}
+            required
+          />
+        </div>
+        <div style={{ marginTop: '16px' }}>
+          <label>Image URL:</label>
+          <input
+            type="text"
+            name="image"
+            value={imageLink}
+            onChange={handleImageLink}
+            required
+          />
+        </div>
+        <button style={{ marginTop: '24px' }} className="button button-green" onClick={addProduct}>Add Product</button>
       </div>
-      <div>
-        <label>Description:</label>
-        <textarea
-          name="description"
-          value={description}
-          onChange={handleDescription}
-          required
-        />
-      </div>
-      <div>
-        <label>Size:</label>
-        <input
-          type="text"
-          name="size"
-          value={size}
-          onChange={handleSize}
-          required
-        />
-      </div>
-      <div>
-        <label>Material:</label>
-        <input
-          type="text"
-          name="material"
-          value={material}
-          onChange={handleMaterial}
-          required
-        />
-      </div>
-      <div>
-        <label>Price:</label>
-        <input
-          type="number"
-          name="price"
-          value={price}
-          onChange={handlePrice}
-          required
-        />
-      </div>
-      <div>
-        <label>Image URL:</label>
-        <input
-          type="text"
-          name="image"
-          value={imageLink}
-          onChange={handleImageLink}
-          required
-        />
-      </div>
-      <button onClick={addProduct}>Add Product</button>
     </div>
+    </section>
   );
 };
 

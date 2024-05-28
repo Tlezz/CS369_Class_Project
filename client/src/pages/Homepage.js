@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import '../static/main.css';
+import '../static/normalize.css'; 
 
 const Homepage = () => {
   const [productList, setProductList] = useState([]);
@@ -16,20 +18,22 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Products</h1>
-      <div className="product-list">
-        {productList.map(product => (
-          <div key={product.productID} className="product-item">
-            <Link to={`/product/${product.productID}`}>
-              <img src={product.imageLink} alt={product.name} />
-              <h2>{product.productName}</h2>
-              <p>${product.price}</p>
-            </Link>
-          </div>
-        ))}
+    <section class="content-section content-section-single">
+      <div class="content-container">
+        <h2>Products</h2>
+        <div className="grid grid-3 content-container  text-center" style={{ marginTop: '36px' }}>
+          {productList.map(product => (
+            <div key={product.productID} className="product-item grid-item">
+              <Link to={`/product/${product.productID}`} style={{ textDecoration: 'none' }}>
+                <img src={product.imageLink} alt={product.name} />
+                <h2 style={{ marginTop: '36px' }}>{product.productName}</h2>
+                <p>{product.price} Zenny</p>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
