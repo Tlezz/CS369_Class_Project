@@ -39,7 +39,7 @@ const AddProduct = () => {
   };
 
   const handleRefresh = () => {
-    window.location.reload();
+    window.location.href = "/";
   };
 
   const addProduct = async (e) => {

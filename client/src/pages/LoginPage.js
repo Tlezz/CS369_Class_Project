@@ -7,7 +7,7 @@ const Login = () => {
   // change hostname
   // copy from Public IPv4 address
   const hostname = "54.164.117.73";
-  
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // const [error, setError] = useState('');
@@ -50,7 +50,7 @@ const Login = () => {
   };
 
   const handleRefresh = () => {
-    window.location.reload();
+    window.location.href = "/";
   };
 
   return (
