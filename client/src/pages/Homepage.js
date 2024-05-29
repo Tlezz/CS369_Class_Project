@@ -9,7 +9,7 @@ const Homepage = () => {
 
   // change hostname
   // copy from Public IPv4 address
-  const hostname = "54.164.117.73";
+  const hostname = "44.220.145.158";
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
