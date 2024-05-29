@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 // import { useNavigate } from 'react-router-dom';
 import axios from "axios";
+import API from "../api/API.js";
 
 const Login = () => {
+  const hostname = API;
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // const [error, setError] = useState('');
@@ -12,10 +14,11 @@ const Login = () => {
 
   useEffect(() => {
     const getAccountList = () => {
-      axios.get("http://localhost:3306/api/login").then((response) => {
+      axios.get(`http://${hostname}:3306/api/login/`).then((response) => {
         setAccountList(response.data);
       });
     };
+    
 
     getAccountList();
   }, []);

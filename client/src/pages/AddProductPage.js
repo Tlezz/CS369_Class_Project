@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API from "../api/API.js";
 
 const AddProduct = () => {
   // ID is Primary
@@ -9,6 +10,8 @@ const AddProduct = () => {
   const [description, setDescription] = useState("");
   const [size, setSize] = useState("");
   const [material, setMaterial] = useState("");
+
+  const hostname = API;
 
   const handleProductName = (event) => {
     setProductName(event.target.value);
@@ -34,6 +37,10 @@ const AddProduct = () => {
     setMaterial(event.target.value);
   };
 
+  const handleRefresh = () => {
+    window.location.reload();
+  };
+
   const addProduct = async (e) => {
     if (e) {
       e.preventDefault();
@@ -41,7 +48,7 @@ const AddProduct = () => {
   
     try {
       const response = await axios.post(
-        "http://localhost:3306/api/addProduct",
+        `http://${hostname}:3306/api/addProduct`,
         {
           sending: {
             productName,
@@ -56,6 +63,7 @@ const AddProduct = () => {
   
       // Handle successful
       console.log("Success: Product added");
+      handleRefresh();
     } catch (error) {
       // Handle error
       console.error("Error:", error.message);

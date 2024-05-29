@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import '../static/main.css';
-import '../static/normalize.css'; 
+import "../static/main.css";
+import "../static/normalize.css";
+
+import API from "../api/API.js";
 
 const Homepage = () => {
+  const hostname = API;
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {
     const getProductList = () => {
-      axios.get("http://localhost:3306/api/products/").then((response) => {
+      axios.get(`http://${hostname}:3306/api/products/`).then((response) => {
         setProductList(response.data);
       });
     };
-    
+
     getProductList();
   }, []);
 
@@ -21,12 +24,18 @@ const Homepage = () => {
     <section class="content-section content-section-single">
       <div class="content-container">
         <h2>Products</h2>
-        <div className="grid grid-3 content-container  text-center" style={{ marginTop: '36px' }}>
-          {productList.map(product => (
+        <div
+          className="grid grid-3 content-container  text-center"
+          style={{ marginTop: "36px" }}
+        >
+          {productList.map((product) => (
             <div key={product.productID} className="product-item grid-item">
-              <Link to={`/product/${product.productID}`} style={{ textDecoration: 'none' }}>
+              <Link
+                to={`/product/${product.productID}`}
+                style={{ textDecoration: "none" }}
+              >
                 <img src={product.imageLink} alt={product.name} />
-                <h2 style={{ marginTop: '36px' }}>{product.productName}</h2>
+                <h2 style={{ marginTop: "36px" }}>{product.productName}</h2>
                 <p>{product.price} Zenny</p>
               </Link>
             </div>
