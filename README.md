@@ -60,3 +60,14 @@ npm install
 ``` bash
 npm start
 ```
+
+ทดสอบการทำงานโดยการนำ Public IPv4 address มาค้นหาและใส่ PORT 3306
+``` bash
+http://${address}:3306/
+
+# PATH
+# /api/products/
+# /api/login/
+# /api/products/${id}
+```
+
