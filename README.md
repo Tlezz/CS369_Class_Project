@@ -12,6 +12,16 @@
 ##### DATABASE : sql12709675
 ##### PASSWORD : B58auKQ7He
 
+### กรณีต้องการล็อกอินเข้าสู่ระบบ
+#### บัญชีที่ 1
+* username : 6409682777
+* password : 1909802697311
+#### บัญชีที่ 2
+* username : tlezyy
+* password : 1234
+
+
+
 ## ขั้นตอนการ deployment server
 ### STEP 1 : ติดตั้ง NodeJS และ NPM ด้วย nvm
 หลังจาที่ connect กับ เซิฟเวอร์ EC2 instance แล้ว พิมคำสั่ง
