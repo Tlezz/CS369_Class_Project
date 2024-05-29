@@ -128,3 +128,18 @@ sudo rm /var/www/html/index.nginx-debian.html
 sudo cp -r build/* /var/www/html
 ```
 ทดสอบการทำงานโดยการนำ Public IPv4 address มาค้นหา
+
+## ในกรณีที่ web application ไม่สามารถดึงข้อมูลจาก server ได้ให้แก้ไขหมายเลข host
+### เนื่องจากการเปิด server บน AWS EC2 ไม่สามารถเปิดเป็นเวลานานได้
+###ทำให้ต้องคอยมาเปิดเองใหม่เรื่อยๆ
+### หรือสามารถเปิดแบบ localhost ได้
+#### การแก้ไขต้องแก้ที่ไฟล์
+* AddProductPage.js
+* Homepage.js
+* LoginPage.js
+* ProductDetailPage.js
+``` bash
+  // change hostname
+  // copy from Public IPv4 address
+  const hostname = "54.164.117.73";
+```
