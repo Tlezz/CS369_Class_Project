@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import API from "../api/API.js";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
-  const hostname = API;
+
+  // change hostname
+  // copy from Public IPv4 address
+  const hostname = "54.164.117.73";
 
   useEffect(() => { 
     const getProduct = () => {

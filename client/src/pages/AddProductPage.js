@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import API from "../api/API.js";
 
 const AddProduct = () => {
   // ID is Primary
@@ -11,7 +10,9 @@ const AddProduct = () => {
   const [size, setSize] = useState("");
   const [material, setMaterial] = useState("");
 
-  const hostname = API;
+  // change hostname
+  // copy from Public IPv4 address
+  const hostname = "54.164.117.73";
 
   const handleProductName = (event) => {
     setProductName(event.target.value);

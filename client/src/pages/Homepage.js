@@ -4,10 +4,12 @@ import axios from "axios";
 import "../static/main.css";
 import "../static/normalize.css";
 
-import API from "../api/API.js";
 
 const Homepage = () => {
-  const hostname = API;
+
+  // change hostname
+  // copy from Public IPv4 address
+  const hostname = "54.164.117.73";
   const [productList, setProductList] = useState([]);
 
   useEffect(() => {

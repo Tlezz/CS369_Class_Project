@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 // import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import API from "../api/API.js";
 
 const Login = () => {
-  const hostname = API;
+
+  // change hostname
+  // copy from Public IPv4 address
+  const hostname = "54.164.117.73";
+  
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   // const [error, setError] = useState('');
