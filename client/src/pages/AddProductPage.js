@@ -12,7 +12,7 @@ const AddProduct = () => {
 
   // change hostname
   // copy from Public IPv4 address
-  const hostname = "34.229.169.202";
+  const hostname = "34.228.143.240";
 
   const handleProductName = (event) => {
     setProductName(event.target.value);

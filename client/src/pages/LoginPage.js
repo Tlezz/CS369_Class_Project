@@ -6,7 +6,7 @@ const Login = () => {
 
   // change hostname
   // copy from Public IPv4 address
-  const hostname = "34.229.169.202";
+  const hostname = "34.228.143.240";
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

@@ -8,7 +8,7 @@ const ProductDetail = () => {
 
   // change hostname
   // copy from Public IPv4 address
-  const hostname = "34.229.169.202";
+  const hostname = "34.228.143.240";
 
   useEffect(() => { 
     const getProduct = () => {
