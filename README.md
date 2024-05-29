@@ -70,4 +70,61 @@ http://${address}:3306/
 # /api/login/
 # /api/products/${id}
 ```
-
+## ขั้นตอนการ deployment web application
+### STEP 1 : ติดตั้ง NodeJS และ NPM
+``` bash
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=28
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt-get update
+sudo apt-get install nodejs -y
+```
+ติดตั้ง git
+``` bash
+sudo apt-get update -y
+sudo apt-get install git -y
+```
+### STEP 2 : ติดตั้ง git และ clone repository
+ตรวจสอบเวอร์ชั้นของ git
+``` bash
+git --version
+```
+clone git repository ลงมา
+``` bash
+git clone https://github.com/Tlezz/CS369_Class_Project.git
+```
+ย้ายเข้าไปใน directory และติดตั้ง packages
+``` bash
+cd client
+npm install
+```
+build application
+``` bash
+npm run build
+```
+เช็คไฟล์ที่ build มา
+``` bash
+ls
+# จะมี directory ที่ชื่อ build
+```
+### STEP 3 : ติดตั้ง nginx
+ติดตั้ง nginx
+``` bash
+sudo apt install nginx -y
+```
+แสดงไฟล์ภายใน /var/www/html/ เพื่อดูไฟล์ที่ต้องแก้ไข
+``` bash
+ls -l /var/www/html/
+```
+ลบไฟล์ index.nginx-debian.html
+``` bash
+sudo rm /var/www/html/index.nginx-debian.html
+```
+คัดลอกไฟล์ build มาใส่ nginx html
+``` bash
+sudo cp -r build/* /var/www/html
+```
+ทดสอบการทำงานโดยการนำ Public IPv4 address มาค้นหา
